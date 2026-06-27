@@ -1,0 +1,16 @@
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'org.firstinspires.ftc.tools'
+    compileSdkVersion 35
+
+    sourceSets {
+        main {
+            assets.srcDirs = ['.']
+            assets.exclude 'build.gradle'
+            assets.exclude 'build/**'
+            assets.exclude '.gradle/**'
+            assets.exclude '.DS_Store'
+        }
+    }
+}
