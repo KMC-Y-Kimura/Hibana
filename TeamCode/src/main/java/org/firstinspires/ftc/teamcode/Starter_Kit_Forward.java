@@ -27,7 +27,7 @@ public class Starter_Kit_Forward extends LinearOpMode {
         rightmotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         telemetry.addData("Status", "Initialized");
-        telemetry.addData("lestMotor", LEFT_MOTOR);
+        telemetry.addData("leftMotor", LEFT_MOTOR);
         telemetry.addData("rightMotor", RIGHT_MOTOR);
         telemetry.update();
 
