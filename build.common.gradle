@@ -1,14 +1,11 @@
 /**
- * build.common.gradle
- *
- * Shared build configuration for FTC Robot Controller applications.
- * Updated for AGP 8.7.x + Gradle 8.9 compatibility.
+ * Shared build settings for the TeamCode application module.
  */
 
 apply plugin: 'com.android.application'
 
 android {
-    compileSdk 34
+    compileSdk 30
 
     signingConfigs {
         release {
@@ -38,8 +35,7 @@ android {
         applicationId 'com.qualcomm.ftcrobotcontroller'
         minSdk 24
         targetSdk 28
-
-        versionCode 51
+        versionCode 61
         versionName "11.1"
     }
 
@@ -67,6 +63,7 @@ android {
     packaging {
         jniLibs {
             pickFirsts += ['**/*.so']
+            useLegacyPackaging = true
         }
         resources {
             pickFirsts += ['**/*.so']

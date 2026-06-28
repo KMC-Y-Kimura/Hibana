@@ -1,12 +1,25 @@
-/**
- * FtcRobotController module build.gradle
- *
- * This module is the main robot controller application.
- * All your custom code goes in TeamCode, not here.
- */
+import java.text.SimpleDateFormat
 
-apply from: '../build.common.gradle'
+apply plugin: 'com.android.library'
 
 android {
     namespace 'com.qualcomm.ftcrobotcontroller'
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 28
+        buildConfigField "String", "APP_BUILD_TIME", '"' + (new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ", Locale.ROOT).format(new Date())) + '"'
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
+
+apply from: '../build.dependencies.gradle'
